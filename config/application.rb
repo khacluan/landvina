@@ -58,5 +58,13 @@ module RailsApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.to_prepare do
+      Devise::SessionsController.layout "login_admin"
+      Devise::RegistrationsController.layout "login_admin"
+      Devise::ConfirmationsController.layout "login_admin"
+      Devise::UnlocksController.layout "login_admin"            
+      Devise::PasswordsController.layout "login_admin"        
+    end
   end
 end

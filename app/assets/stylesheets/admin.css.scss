@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require ./shared/_reset
+ */
+
+@import "bourbon";
+
+body{
+	background: #e6e6e6;	
+}
+
+div#ad_wrapper{
+	width: 100%;
+	
+	div#ad_header{
+		width: 100%;
+		height: 50px;
+		@include linear-gradient(#123456, #1d85ed);	
+	} 
+	
+	div#ad_main{
+		width: 100%;
+		
+		@include clearfix;
+		div.left-menu{
+			max-width: 200px;
+			width: 20%;
+			float: left;
+			display: block;
+			box-shadow: 1px 1px 1px #999;
+		}
+		
+		div#stage{
+			width: 80%;
+			float: left;
+			display: block;
+		}
+	}
+	
+}

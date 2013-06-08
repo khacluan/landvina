@@ -1,0 +1,29 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "login"}) do |f| %>
+  <%= devise_error_messages! %>
+ 
+  	<p>
+	    <label for="admin_email">Email:</label>
+	    <input type="text" name="admin[email]" id="login" value="">
+	  </p>
+	
+	  <p>
+	    <label for="admin_password">Password:</label>
+	    <input type="password" name="admin[password]" id="password" value="">
+	  </p>
+		
+		<p>
+	    <label for="admin_password_confirmation">Confirmation</label>
+	    <input type="password" name="admin[password_confirmation]" id="password" value="">
+	  </p>
+	  
+	  <p class="login-submit signup_button">
+	    <button type="submit" class="login-button">Sign up</button>
+	  </p>
+	  
+	  <p class="forgot-password">
+	  	<%= render "admins/shared/links" %>
+	  </p>
+<% end %>
+

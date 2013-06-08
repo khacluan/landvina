@@ -83,7 +83,7 @@ div.navigation {
         
         &:hover {
           color: white;
-          @include linear-gradient(#0C66B5, #0B4E89);
+          @include linear-gradient(#777, #333);
 					text-shadow: 0px 0px 1px #fff inset;
 					a {
 					  color: white;
@@ -238,8 +238,8 @@ img#dielac {
 
 .selected {
 	color: white;
-  @include linear-gradient(#777, #333);
-	text-shadow: 0px 0px 1px #fff inset;
+  @include linear-gradient(#0C66B5, #0B4E89);
+	text-shadow: 0px 0px 1px #0b4e89 inset;
 	a{
 	  color: white !important;
 	}

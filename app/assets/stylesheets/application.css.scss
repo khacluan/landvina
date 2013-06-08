@@ -19,12 +19,6 @@
   display: none;
 }
 
-.floatingHeader {
-    position: fixed;
-    top: 0;
-    visibility: hidden;
-	z-index: 15000;
-}
 
 @font-face {
   font-family: 'entypo';
@@ -100,25 +94,24 @@ div.host-items{
     cursor: pointer;
     float: left;
     display: block;
-    position: relative;
     
     
     
     div.content{
       width: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      
+      position: relative;
       h2{
         font-size: 32px;
         font-weight: bold;
         padding: 20px 0 0;
         text-align: center;
       }
+      
       i.entypo-icon{
+        position: absolute;
         font-size: 11em;
-        margin: -75px 0 0 75px;
+        top: -25px;
+        left: 78px;
       }
     }
   }

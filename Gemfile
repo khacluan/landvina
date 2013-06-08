@@ -11,6 +11,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'bourbon'
 gem 'compass'
+gem 'thin'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

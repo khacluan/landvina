@@ -1,0 +1,18 @@
+<h2>Forgot your password?</h2>
+<%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {class: "login", :method => :post }) do |f| %>
+ 
+
+  <p>
+    <label for="login">Email:</label>
+    <input type="text" name="admin[email]" id="login" value="">
+  </p>
+	<p class="login-submit send_reset_pass">
+      <button type="submit" class="login-button">Send me reset password instructions</button>
+  </p>
+  <p class="forgot-password">
+    	<a href="/admins/sign_up">Sign up</a>
+  </p>
+<% end %>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+
+<head>
+  <title>Admin</title>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="ad_wrapper">
+		<div id="ad_header">
+			
+		</div>
+		<div id="ad_main">
+			<div class="left-menu">
+				
+			</div>
+			<div id="stage">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

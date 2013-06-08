@@ -1,0 +1,23 @@
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "login"}) do |f| %>
+  	<p>
+      <label for="login">Email:</label>
+      <input type="text" name="admin[email]" id="login" value="">
+    </p>
+
+    <p>
+      <label for="password">Password:</label>
+      <input type="password" name="admin[password]" id="password" value="">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" class="login-button">Login</button>
+    </p>
+    
+    <p class="forgot-password">
+    	<%= render "admins/shared/links" %>
+    </p>
+    
+<% end %>
+
