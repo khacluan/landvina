@@ -8,8 +8,9 @@ gem 'rack', '~> 1.4.5'
 
 gem 'mysql2'
 gem 'sqlite3'
-
-
+gem 'devise'
+gem 'bourbon'
+gem 'compass'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
