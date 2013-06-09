@@ -1,18 +1,16 @@
 RailsApp::Application.routes.draw do
-  get "lands/index"
 
-  get "lands/new"
-
-  get "lands/edit"
-
-  devise_for :admins
-  namespace :admins do
+  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
+  
+  scope "/admins" do
     root :to => "dashboard#index"
-    
+    get "/dashboard/home", controller: :dashboard, action: :home
+    resources :lands
   end
   
-  
-  root :to => "homes#index"
+  get '/clients/index', controller: :clients, action: :index
+  get '/clients/home', controller: :clients, action: :home
+  root :to => "clients#home"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

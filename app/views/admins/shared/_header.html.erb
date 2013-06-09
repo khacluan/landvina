@@ -1,0 +1,7 @@
+<div id="logo">
+	
+</div>
+
+<div class="logout-btn button">
+	<%= link_to "Logout", destroy_admin_session_path, :method => :delete if admin_signed_in? %>
+</div>

@@ -1,0 +1,37 @@
+<h2 class="line-fat">
+	<div class="head-actions">
+		<a class="head-back-action" href="#" href="#" data-url="/admins/lands" data-element="#stage" data-method="GET">
+			<i class="icon-back"></i>
+		</a>
+		<a class="head-add-action dynamic-link" href="#" data-url="/admins/lands/new" data-element="#stage" data-method="GET">
+			<i class="icon-add-element"></i>
+		</a>
+	</div>
+</h2>
+
+<div class="main-data">
+	<table class="table-basic item-list has-effect display dataTable">
+    <thead>
+        <th class="first">Title</th>
+        <th>Vitri</th>
+        <th>Tien do</th>
+        <th>Gia</th>
+        <th class="action last"><%= t("web_action.actions") %></th>
+    </thead>
+    <tbody>
+      <% @lands.each do |land| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= land.title %></td>
+        <td><%= land.land_position_text %></td>
+        <td><%= land.land_status %></td>
+        <td><%= land.price %></td>
+        <td>
+          <a class="dynamic-link edit" data-url="/admins/lands/<%= land.id %>/edit" data-element="#stage" data-method="GET" href="#" >Edit</a>
+          <a class="dynamic-link remove" data-url="/admins/lands/<%= land.id %>" data-element="#stage" href="#" data-method="DELETE" data-confirm="<%= "delete ?" %>">Remove</a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+	<%= paginate @lands %>
+</div>

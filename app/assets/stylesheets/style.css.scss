@@ -125,39 +125,35 @@ div.header{
 }
 
 div.main-content {
-  overflow: hidden; 
+  @include clearfix;
+  height: auto;
   width: 960px;
   margin: 0px auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	box-shadow: 1px 1px 1px #CCC inset;
-
+  
 	
 	
 	div.inner-container{
+	  float: left;
 	 width: 100%;
-	 height: 600px;
+	 height: auto;
 	 border-radius: 5px;
 	 background: #fff;
 	}
-	
-  div.tiles {
-    visibility: visible;
-    div.slider-wrapper{
-
-    }
-  }
 }
 
 div.footer{
+  @include clearfix;
   border-top: 1px solid #ccc;
   width: 100%;
   height: 200px;
-  // @include linear-gradient(#C7C9C1, #ECEDE8);
   @include linear-gradient(#4DA7F6, #00326D);
   border-bottom: 1px solid #c2c2c2;
 	
 	div.wrapper-footer {
+	  float: left;
 		width: 960px;
 		margin: 0px auto;
 		@include clearfix;
@@ -194,11 +190,13 @@ div.footer{
 }
 
 div.final {
+  @include clearfix;
 	border-top: 1px solid #ccc;
   width: 100%;
   height: 38px;
   @include linear-gradient(#E8EAE1, #BDBFB7);
 	div.footer-info {
+	  float: left;
 		margin-top: 10px;
 		span {
 			color: #282B27;
@@ -216,19 +214,6 @@ div.final {
 	}
 }
 
-img#son {
-	position: absolute;
-	top: 200px !important;
-	right: 0px;
-}
-
-img#dielac {
-	position: absolute;
-	top: 0px !important;
-	left: -420px !important;
-	width: 300px !important;
-	height: 300px !important;
-}
 
 .white-link {
 	color: white;

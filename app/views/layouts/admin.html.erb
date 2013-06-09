@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html>
 
 <head>
   <title>Admin</title>
   <%= stylesheet_link_tag    "admin", :media => "all" %>
   <%= javascript_include_tag "admin" %>
   <%= csrf_meta_tags %>
+  <%= google_map_api_js("AIzaSyBaAPECK5m4MLk3NB74Lzg_rRFBD8Kwuhg") %>
 </head>
 <body>
 	<div id="ad_wrapper">
 		<div id="ad_header">
 			
+			<%= render partial: "/admins/shared/header" %>
 		</div>
 		<div id="ad_main">
 			<div class="left-menu">
-				
+				<%= render :partial => "admins/shared/left_menu"%>
 			</div>
+			
 			<div id="stage">
 				<%= yield %>
 			</div>
+			
 		</div>
 	</div>
 </body>

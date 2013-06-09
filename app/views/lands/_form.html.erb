@@ -1,0 +1,22 @@
+<div class="main-data">
+	<%= semantic_form_for @land, remote: true, html: {class: "base-form"} do |f|%>
+		<%= f.inputs do %>
+			<%= f.input :title%>
+			<%= f.input :avatar, as: :file%>
+			<%= f.input :land_position_text, label: "Vị trí"%>
+			<%= f.input :land_status, label: "Tiến độ"%>
+			<%= f.input :price, label: "Giá"%>	
+			<%= f.input :land_type, as: :radio, collection: [['Bán căn hộ','sale'], ['Cho thuê', 'rent']]%>
+			<li class="map-google">
+				<%= show_map_helper @land, {zoom: 10, latitude: 37.8777402, longitude: 12.713512100000003, allow: 'show', searchbox: 'show', width: 270, height: 150}%>
+			</li>
+		<% end%>
+		
+		
+		<%= f.actions do %>
+			<li>
+	      <input class="base-form-submit" type="submit" value="Create Land" name="commit">
+			</li>
+	  <% end %>	
+	<% end %>
+</div>

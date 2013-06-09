@@ -20,17 +20,39 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 	
-	$(document.body).delegate("div.host-items div.dynamic-link", 'click', function(e){
-		var _this = $(this);		
+	$(document.body).delegate(".dynamic-link", 'click', function(e){	
+		var dom = $(this).attr('data-load-element');
+		var url = $(this).attr('data-url');
+		var data = $(this).attr('data-type');
+		var method = $(this).attr('data-method');
     $("div.ajax-loading").removeClass("hidden"); 	
 		$.ajax({
-			url : _this.data('url'),
-			type: _this.data('method'),
-			data: _this.data('action'),
-			success: function(response){
-				$("div.ajax-loading").addClass("hidden");
-			}
+			url : url,
+			type: method,
+			data: {"type" : data},
+			cache: true,
+			success: function (result, textStatus, jqXHR) {
+        // if 304, re-request the data
+        if (result === undefined && textStatus == 'notmodified') {
+            $.ajax({
+                type: method,
+                url: url,
+                data: data,
+                cache: true,
+                ifModified: false, // don't check with server
+                success: function (cachedResult, textStatus, jqXHR) {
+                		$("div.ajax-loading").addClass("hidden");
+                    $("#stage").html(cachedResult);
+                }
+            });
+        }
+        else{
+            $("div.ajax-loading").addClass("hidden");
+            $("#stage").html(result);
+    		}
+    	}
 		});
 		e.preventDefault();
+		return false;
 	});
 });

@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ */
+@import "bourbon";
+
+div.main-data{
+   padding-top: 30px; 
+}
+
+form.base-form{
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 5px 5px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 300px;
+  box-shadow: 1px 1px 5px 1px #CCCCCC;
+  fieldset.inputs{
+    ol{
+      li{
+        padding: 5px 0px;
+        label{
+          color: #666;
+          font-weight: bold;
+          float: left;
+          margin-bottom: 5px;
+        }
+        
+        input{
+          float: left;
+          padding: 0px 42px 0px 8px;
+          height: 32px;
+          color: #525864;
+          background: white;
+          border: 1px solid;
+          border-color: #b3c0e2 #bcc5e2 #c0ccea;
+          border-radius: 4px;
+          @include linear-gradient(top, #f6f8fa, white);
+          @include box-shadow(inset 0 1px 2px rgba(black, .1),
+                              0 1px rgba(white, .5));
+          &:focus {
+          border-color: #46aefe;
+          outline: none;
+          @include box-shadow(inset 0 1px 2px rgba(black, .1),
+                              0 0 5px #46aefe);
+          }
+        }
+      }
+    }
+  }
+  
+  fieldset.actions{
+    padding-left: 33%;
+    ol{
+      li{
+        input{
+          @include button(pill, #0e4781);
+          
+        }
+      }
+    }
+  }
+}

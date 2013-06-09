@@ -12,6 +12,10 @@ gem 'devise'
 gem 'bourbon'
 gem 'compass'
 gem 'thin'
+gem 'formtastic'
+gem 'paperclip', '~> 3.0'
+gem 'kaminari'
+gem 'gmpoint'   
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
