@@ -1,3 +1,19 @@
+GIT
+  remote: git@github.com:dangluan/gmpoint.git
+  revision: 0df2b8c09ab62f5863c68cc02e76b3a10ca0884b
+  tag: v0.1.2
+  specs:
+    gmpoint (0.1.2)
+      geocoder
+      jeweler (~> 1.8.4)
+      new_responds_to_parent
+
+GIT
+  remote: git@github.com:jameshuynh/new_responds_to_parent.git
+  revision: 2c1857d235916018a4960c1f4aa2585bd4aae472
+  specs:
+    new_responds_to_parent (0.1.5)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -66,11 +82,14 @@ GEM
       actionpack (>= 3.0)
     fssm (0.2.10)
     geocoder (1.1.8)
-    gmpoint (0.0.9)
-      geocoder
-      new_responds_to_parent
+    git (1.2.5)
     hike (1.2.3)
     i18n (0.6.1)
+    jeweler (1.8.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
     journey (1.0.4)
     jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
@@ -87,7 +106,6 @@ GEM
     multi_json (1.7.6)
     mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
-    new_responds_to_parent (0.1.5)
     orm_adapter (0.4.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -159,11 +177,12 @@ DEPENDENCIES
   compass
   devise
   formtastic
-  gmpoint
+  gmpoint!
   jquery-rails
   kaminari
   minitest
   mysql2
+  new_responds_to_parent!
   paperclip (~> 3.0)
   rack (~> 1.4.5)
   rails (~> 3.2.13)

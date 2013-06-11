@@ -34,4 +34,5 @@ RailsApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = false
+  Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-6.8.5-Q16"
 end

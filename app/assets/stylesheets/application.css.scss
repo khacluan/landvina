@@ -221,5 +221,27 @@ div.list-items{
       box-shadow: 0 0 5px #ffd057;
       cursor: pointer;
     }
+    
+    div.item-img{
+      width: 242px;
+      height: 180px;
+      background: #f3f2f2;
+    }
+    
+    div.item-info{
+      @include clearfix;
+      height: 100px;
+      div.title{
+        float: left;
+        color: #83C5D8;
+      }
+      div.description{
+        float: left;
+        color: #666;
+      }
+      div.item-footer{
+        
+      }
+    }
   }
 }

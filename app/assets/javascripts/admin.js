@@ -26,10 +26,10 @@ $(document).ready(function(){
         
   	})
   	.bind("ajax:success", function(evt, data, status, xhr){
-      $('div#stage').html(data);
+      
   	})
   	.bind('ajax:complete', function(evt, xhr, status){
-			
+			$('div#stage').html(data);
   	});
   });
 	

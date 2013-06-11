@@ -17,10 +17,11 @@ class LandsController < ApplicationController
     @land = Land.new(params[:land])
     if @land.save
       load_data Land
-      render :action => 'index', :layout => false
+      response = render_to_string action: "index", layout: false
     else
-      render :action => 'edit', :layout =>  false
+      response = render_to_string action: "new", layout: false
     end
+    load_response_from_iframe("#stage", response)
   end
 
   def edit

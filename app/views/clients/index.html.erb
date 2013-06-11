@@ -2,8 +2,21 @@
 <div class="list-items">
 	<% @lands.each do |land|%>
 		<div class="item">
-			<%= land.title %>
-
+			<div class="item-img">
+				<%= image_tag land.avatar.url(:medium) %>
+			</div>
+			
+			<div class="item-info">
+				<div class="title">
+					<%= land.title %>
+				</div>
+				<div class="description">
+					
+				</div>
+				<div class="item-footer">
+					
+				</div>
+			</div>
 		</div>
 	<% end %>
 </div>
