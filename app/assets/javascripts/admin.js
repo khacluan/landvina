@@ -13,31 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require locations
+//= require ./admins/jquery.layout
+//= require ./admins/jquery.ui.all
 
 $(document).ready(function(){
-	
-	var height = $(window).height();
-	$("div.left-menu").css({"height" : height});
-	$("div#stage").css({"height" : height});
-  
+
   $(document.body).delegate('form.base-form fieldset.actions input.base-form-submit', 'click', function(e){
   	$('form.base-form')
   	.bind("ajax:beforeSend", function(evt, xhr, settings){
         
   	})
   	.bind("ajax:success", function(evt, data, status, xhr){
-      
+      $('div#stage').html(data);
   	})
   	.bind('ajax:complete', function(evt, xhr, status){
-			$('div#stage').html(data);
+			
   	});
   });
 	
-	$(document.body).delegate('div.vmenu li', 'click', function(){
-		$("div.vmenu li").removeClass("selected");
-		$(this).addClass("selected");
-		
-	});
 	
 	$(document.body).delegate('a.dynamic-link', 'click', function(e){
 		var _this = this;

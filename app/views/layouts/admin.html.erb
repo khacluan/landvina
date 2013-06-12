@@ -7,23 +7,28 @@
   <%= javascript_include_tag "admin" %>
   <%= csrf_meta_tags %>
   <%= google_map_api_js("AIzaSyBaAPECK5m4MLk3NB74Lzg_rRFBD8Kwuhg") %>
+  <script type="text/javascript">
+		$(document).ready(function () {
+		$('body').layout({
+			resizable: false,
+			spacing_open: 0,
+    	spacing_closed: 0
+		});
+	});
+</SCRIPT>
 </head>
 <body>
-	<div id="ad_wrapper">
-		<div id="ad_header">
-			
-			<%= render partial: "/admins/shared/header" %>
-		</div>
-		<div id="ad_main">
-			<div class="left-menu">
-				<%= render :partial => "admins/shared/left_menu"%>
-			</div>
-			
-			<div id="stage">
+	<div class="ui-layout-center main-content">
+		<div id="stage">
 				<%= yield %>
-			</div>
-			
 		</div>
+	</div>
+	
+	<div class="ui-layout-north header">
+		<%= render partial: "/admins/shared/header" %>
+	</div>
+	<div class="ui-layout-west left-menu">
+		<%= render :partial => "admins/shared/left_menu"%>
 	</div>
 	<iframe id='app_iframe' name="app_iframe" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
 </body>

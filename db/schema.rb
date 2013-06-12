@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609143128) do
+ActiveRecord::Schema.define(:version => 20130612174014) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(:version => 20130609143128) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "assets", :force => true do |t|
+    t.integer  "attachment_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+    t.string   "content_type"
+  end
+
   create_table "lands", :force => true do |t|
     t.string   "title"
     t.string   "land_position_text"
@@ -46,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130609143128) do
     t.float    "location_latitude"
     t.float    "location_longitude"
     t.string   "location_address"
+    t.text     "description"
   end
 
 end

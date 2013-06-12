@@ -20,6 +20,20 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 	
+	
+	$(document.body).delegate(".fancy-link", 'click', function(){
+		var url = $(this).attr("data-url");
+		$.fancybox({
+			type: 'ajax',
+			prevEffect		: 'none',
+			nextEffect		: 'none',
+			closeBtn		: true,
+			href: url
+			
+		});
+		return false;
+	});
+	
 	$(document.body).delegate(".dynamic-link", 'click', function(e){	
 		var dom = $(this).attr('data-load-element');
 		var url = $(this).attr('data-url');

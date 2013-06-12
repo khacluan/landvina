@@ -8,6 +8,8 @@ RailsApp::Application.routes.draw do
     resources :lands
   end
   
+  get '/clients/:id/land_detail', controller: :clients, action: :land_detail
+  get '/clients/:id/show_map', controller: :clients, action: :show_map
   get '/clients/index', controller: :clients, action: :index
   get '/clients/home', controller: :clients, action: :home
   root :to => "clients#home"

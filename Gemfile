@@ -9,7 +9,7 @@ gem 'rack', '~> 1.4.5'
 gem 'mysql2'
 gem 'sqlite3'
 gem 'devise'
-gem 'bourbon'
+
 gem 'compass'
 gem 'thin'
 gem 'formtastic'
@@ -22,14 +22,14 @@ gem 'new_responds_to_parent', git: "git@github.com:jameshuynh/new_responds_to_pa
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'bourbon'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.0.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

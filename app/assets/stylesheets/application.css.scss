@@ -11,6 +11,7 @@
  *= require_self
  *= require style
  *= require menu
+ *= require jquery.fancybox
  */
 @import "bourbon";
 
@@ -231,16 +232,33 @@ div.list-items{
     div.item-info{
       @include clearfix;
       height: 100px;
+      position: relative;
       div.title{
         float: left;
         color: #83C5D8;
+        font-weight: bold;
+        padding: 3px 5px 5px 10px;
+        width: 94%;
       }
       div.description{
         float: left;
         color: #666;
+        padding: 5px 5px 5px 10px;
+        width: 94%;
       }
       div.item-footer{
+        position: absolute;
+        @include clearfix;
+        right: 5px;
+        bottom: 5px;
         
+        a.btn-small{
+          float: left;
+          @include button(pill, #FBA200);
+          color: #fff;
+          padding: 2px 7px;
+          margin-right: 3px;
+        }
       }
     }
   }

@@ -11,10 +11,13 @@
 					<%= land.title %>
 				</div>
 				<div class="description">
-					
+					<%= truncate(land.description, length: 150)%>
 				</div>
 				<div class="item-footer">
 					
+					<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/land_detail">chi tiết</a>
+					<a class="btn-small fancy-link" href="#" data-url="/clients/<%= land.id %>/show_map">địa điểm</a>
+					<a class="btn-small fancy-link" href="#" data-url="" >hình ảnh</a>					
 				</div>
 			</div>
 		</div>
